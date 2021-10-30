@@ -1,0 +1,22 @@
+# Screens
+hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
+
+if [ "$hdmi" = "HDMI-1" ]; then
+	xrandr --newmode "3440x1440_40.00"  270.00  3440 3648 4008 4576  1440 1443 1453 1476 -hsync +vsync
+	xrandr --addmode HDMI-1 3440x1440_40.00
+	xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 3440x1440_40.00 --pos 1920x0 --rotate normal
+else
+	xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --primary
+fi
+
+#Composer
+picom & 
+
+#Keyboard
+setxkbmap es &
+
+#Wallpaper
+feh --bg-scale Wallpapers/57.jpg &
+
+#Volumen
+volumeicon &
