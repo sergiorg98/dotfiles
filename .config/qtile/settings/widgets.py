@@ -34,7 +34,6 @@ def powerline(fg="light", bg="dark"):
 
 def workspaces(): 
     return [
-        separator(),
         widget.GroupBox(
             **base(fg='light'),
             font='Hack Nerd Font',

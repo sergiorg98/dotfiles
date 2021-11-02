@@ -1,9 +1,13 @@
 from libqtile import layout
 from libqtile.config import Match
+from .theme import colors
+
 
 layout_conf = {
+    'border_focus': colors['focus'][0],
     'border_width': 1,
     'margin': 4
+
 }
 
 layouts = [
@@ -31,4 +35,6 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
-])
+    ],
+    border_focus=colors["color4"][0]
+)
