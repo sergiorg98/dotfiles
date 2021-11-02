@@ -9,6 +9,9 @@ else
 	xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --primary
 fi
 
+#NetworkManager
+nm-applet &
+
 #Composer
 picom & 
 
@@ -20,3 +23,9 @@ feh --bg-scale Wallpapers/57.jpg &
 
 #Volumen
 volumeicon &
+
+#USBs
+udiskie -t &
+
+#Battery
+cbatticon &
