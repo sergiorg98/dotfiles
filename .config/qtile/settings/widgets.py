@@ -114,6 +114,7 @@ secondary_widgets = [
 
     powerline('color2', 'color1'),
 
+
     widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
 
 ]
