@@ -60,4 +60,8 @@ keys = [
 
     #Browser
     Key([mod], "b", lazy.spawn("google-chrome-stable")),
+
+    #Screenshot
+
+    Key([mod], "c", lazy.spawn("scrot -s -F 'Screenshots/%Y-%m-%d-%H%M%S_$wx$h.png'")),
 ]
