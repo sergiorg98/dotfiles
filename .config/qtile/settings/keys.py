@@ -42,9 +42,9 @@ keys = [
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
+    Key([mod], "r", lazy.restart(), desc="Restart Qtile"),
+    Key([mod, "control"], "r", lazy.spawn("bash .updatescreens.sh"), lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),desc="Spawn a command using a prompt widget"),
 
     #Menu
     Key([mod], "m", lazy.spawn("rofi -show run"), desc="Start the menu"),
@@ -54,13 +54,18 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    
+    #Media keys
+    Key([], "XF86AudioPlay", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause")),
+    Key([], "XF86AudioNext", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next")),
+    Key([], "XF86AudioPrev", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous")),
 
     #Brightness
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 
     #Browser
-    Key([mod], "b", lazy.spawn("google-chrome-stable")),
+    Key([mod], "b", lazy.spawn("firefox")),
 
     #Screenshot
 

@@ -11,5 +11,5 @@ for i, group in enumerate(groups):
         # Switch to workspace N
         Key([mod], actual_key[i], lazy.group[group.name].toscreen()),
         # Send window to workspace N
-        Key([mod, "shift"], actual_key[i], lazy.window.togroup(group.name))
+        Key([mod, "shift"], actual_key[i], lazy.window.togroup(group.name, switch_group=True))
     ])

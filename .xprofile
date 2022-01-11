@@ -1,3 +1,8 @@
+#Qt Themes setup
+export QT_STYLE_OVERRIDE=kvantum
+#Todoist config
+export DESKTOPINTEGRATION=false
+
 # Screens
 hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
 
@@ -30,3 +35,12 @@ udiskie -t &
 
 #Battery
 cbatticon &
+
+#email
+#birdtray &
+
+#Toggle
+TogglDesktop &
+
+#Todoist
+todoist &

@@ -40,7 +40,7 @@ from settings.widgets import widget_defaults, extension_defaults
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
-follow_mouse_focus = False
+follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 auto_fullscreen = True
