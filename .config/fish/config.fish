@@ -4,3 +4,4 @@ end
 starship init fish | source
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 set fish_greeting
+alias vi='nvim'
