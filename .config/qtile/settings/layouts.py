@@ -16,8 +16,9 @@ layouts = [
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    # layout.Matrix(),
+#    layout.Matrix(**layout_conf),
     layout.MonadTall(**layout_conf),
+#    layout.MonadThreeCol(**layout_conf),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),

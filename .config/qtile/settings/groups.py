@@ -2,11 +2,11 @@ from libqtile.config import Key, Group
 from libqtile.command import lazy
 from .keys import mod, keys
 
-groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   ", "   "]]
+groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   "]]
 
 
 for i, group in enumerate(groups):
-    actual_key = ["a","s","d","f","c","v"]
+    actual_key = ["a","s","d","f","g"]
     keys.extend([
         # Switch to workspace N
         Key([mod], actual_key[i], lazy.group[group.name].toscreen()),

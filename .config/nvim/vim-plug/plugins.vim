@@ -9,12 +9,20 @@ call plug#begin('~/.config/nvim/plugged')
     " Syntax support
     Plug 'sheerun/vim-polyglot'
 
-    "THEMES
-    Plug 'morhetz/gruvbox'
-    Plug 'joshdick/onedark.vim'
-    Plug 'vim-airline/vim-airline'
-
     "Airlines
     Plug 'vim-airline/vim-airline' 
     Plug 'vim-airline/vim-airline-themes'
+
+    "Autocomplete
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    "Prettier
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+    "THEMES
+    Plug 'morhetz/gruvbox'
+    Plug 'joshdick/onedark.vim'
+    Plug 'phanviet/vim-monokai-pro'
+    Plug 'tomasiser/vim-code-dark'
+
 call plug#end()

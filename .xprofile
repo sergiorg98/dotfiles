@@ -2,6 +2,13 @@
 export QT_STYLE_OVERRIDE=kvantum
 #Todoist config
 export DESKTOPINTEGRATION=false
+export LIBVA_DRIVER_NAME=i965
+#export MOZ_DISABLE_RDD_SANDBOX=1
+export MOZ_USE_XINPUT2=1
+
+#Ruby Gems
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
 
 # Screens
 hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
@@ -34,7 +41,7 @@ volumeicon &
 udiskie -t &
 
 #Battery
-cbatticon &
+cbatticon -u 60 -r 5 -c "poweroff" -l 15 -o "xbacklight = 5" BAT0 &
 
 #email
 #birdtray &
