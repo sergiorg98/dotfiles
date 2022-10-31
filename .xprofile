@@ -3,20 +3,22 @@ export QT_STYLE_OVERRIDE=kvantum
 #Todoist config
 export DESKTOPINTEGRATION=false
 
+export LIBVA_DRIVER_NAME=nvidia
+
 # Screens
-hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
+#hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
 
-if [ "$hdmi" = "HDMI1" ]; then
-	#xrandr --newmode "3440x1440_40.00"  270.00  3440 3648 4008 4576  1440 1443 1453 1476 -hsync +vsync
-	xrandr --newmode "3440x1440_40.00"  269.62  3440 3640 4008 4576  1440 1441 1444 1473  -HSync +Vsync
-	xrandr --addmode HDMI1 3440x1440_40.00
-	xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --primary --mode 3440x1440_40.00 --pos 1920x0 --rotate normal
-else
-	xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --primary
-fi
-
-#NetworkManager
-nm-applet &
+#if [ "$hdmi" = "HDMI1" ]; then
+#	#xrandr --newmode "3440x1440_40.00"  270.00  3440 3648 4008 4576  1440 1443 1453 1476 -hsync +vsync
+#	xrandr --newmode "3440x1440_40.00"  269.62  3440 3640 4008 4576  1440 1441 1444 1473  -HSync +Vsync
+#	xrandr --addmode HDMI1 3440x1440_40.00
+#	xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --primary --mode 3440x1440_40.00 --pos 1920x0 --rotate normal
+#else
+#	xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --primary
+#fi
+#
+##NetworkManager
+#nm-applet &
 
 #Composer
 picom & 
@@ -28,13 +30,13 @@ setxkbmap es &
 feh --bg-scale Wallpapers/57.jpg &
 
 #Volumen
-volumeicon &
+#volumeicon &
 
 #USBs
-udiskie -t &
+#udiskie -t &
 
 #Battery
-cbatticon &
+#cbatticon &
 
 #email
 #birdtray &
